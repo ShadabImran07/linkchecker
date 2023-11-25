@@ -1,10 +1,9 @@
 import { LinkChecker } from "linkinator";
 import { NextResponse } from "next/server";
-import { type NextRequest } from "next/server";
 
-export async function GET(request: NextRequest) {
+export async function GET(request: Request) {
 	try {
-		const url: any = request.nextUrl.searchParams.get("id");
+		const url = request.nextUrl.searchParams.get("id");
 		const checker = new LinkChecker();
 		let brokenLinks: any = [];
 		checker.on("link", (link: any) => {
