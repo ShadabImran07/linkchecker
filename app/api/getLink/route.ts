@@ -1,6 +1,9 @@
+
 import { LinkChecker } from "linkinator";
 import { NextResponse } from "next/server";
 import { type NextRequest } from "next/server";
+export const dynamic = "force-static";
+
 
 export async function GET(request: NextRequest) {
 	try {
