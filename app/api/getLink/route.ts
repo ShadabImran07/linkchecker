@@ -1,7 +1,7 @@
 import { LinkChecker } from "linkinator";
 import { NextResponse } from "next/server";
 
-export async function GET(request: any) {
+export async function GET(request: Request) {
 	try {
 		const url = request.nextUrl.searchParams.get("id");
 		const checker = new LinkChecker();
