@@ -12,7 +12,7 @@ const Searchbar = () => {
 		try {
 			setIsLoading(true);
 			const response = await fetch(
-				`http://localhost:3000/api/getLink?id=${searchPrompt}`,
+				"http://localhost:3000/api/getLink",
 				{
 					method: "POST",
 					body: JSON.stringify({
