@@ -11,12 +11,15 @@ const Searchbar = () => {
 		e.preventDefault();
 		try {
 			setIsLoading(true);
-			const response = await fetch("http://localhost:3000/api/getLink", {
-				method: "POST",
-				body: JSON.stringify({
-					url: searchPrompt,
-				}),
-			});
+			const response = await fetch(
+				`http://localhost:3000/api/getLink?id=${searchPrompt}`,
+				{
+					method: "POST",
+					body: JSON.stringify({
+						url: searchPrompt,
+					}),
+				}
+			);
 			if (!response.ok) {
 				throw new Error("Failed to fetch data");
 			}
