@@ -14,7 +14,10 @@ const Searchbar = () => {
 			const response = await fetch(
 				`http://localhost:3000/api/getLink?id=${searchPrompt}`,
 				{
-					method: "GET",
+					method: "POST",
+					body: JSON.stringify({
+						url: searchPrompt,
+					}),
 				}
 			);
 			if (!response.ok) {
